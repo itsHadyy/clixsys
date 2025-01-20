@@ -1,6 +1,4 @@
-Sure, here is a README file for your ClixSys website on GitHub:
 
-```
 # ClixSys Website
 
 This repository contains the source code for the ClixSys website, a platform showcasing our expertise in home automation systems, TV mounts, web development, and mobile app development.
