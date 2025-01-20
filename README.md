@@ -52,5 +52,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Contact
 
 For any questions or inquiries, please feel free to contact us through the contact form on our website or by email at [itshadyy@gmail.com].
-```
-
