@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+:root {
+  --font01: "Montserrat", serif;
+  --font02: "Playfair Display", serif;
+  --font03: "Playfair", serif;
+  --black: #333;
+  --white: #f3f3f3;
+  --darkGray: #696969;
+  --lightGray: #e2e2e2;
+  --gold: #efcb03;
+  --silver: #c0c0c0;
+  --red: #e80303;
+  --blue: #0584e6;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font01);
+}
+
+body {
+  font-family: var(--font01);
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  box-shadow: 0px 0px 20px -2px inset var(--lightGray);
+}
+
+.nav {
+  background: var(--lightGray);
+  background: -moz-linear-gradient(180deg, var(--lightGray) 0%, rgba(243, 243, 243, 1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(226, 226, 226, 1) 0%, rgba(243, 243, 243, 1) 100%);
+  background: linear-gradient(180deg, rgba(226, 226, 226, 1) 0%, rgba(243, 243, 243, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2e2e2", endColorstr="#f3f3f3", GradientType=1);
+  padding: 20px 80px;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.nav.hidden {
+  transform: translateY(-100%);
+  /* Slide navbar off the screen */
+  opacity: 0;
+}
+
+.nav.visible {
+  transform: translateY(0);
+  /* Bring navbar into view */
+  opacity: 1;
+}
+
+
+.logo {
+  width: 120px;
+}
+
+.nav .links {
+  display: flex;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 80px;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  display: inline-block;
+  margin-right: 40px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+button, input[type=submit] {
+  background-color: transparent;
+  border: 2px solid var(--gold);
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover, input[type=submit]:hover {
+  background-color: var(--gold);
+  color: var(--black);
+  /* Base color */
+}
+
+.btn01 {
+  background-color: var(--gold);
+  color: var(--black);
+  margin: 0 10px;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.nav .links ul li a {
+  text-decoration: none;
+  color: var(--black);
+  /* Base color */
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, var(--gold) 50%, var(--black) 50%);
+  background-size: 200%;
+  /* Double size for sliding effect */
+  background-position: 100% 0;
+  /* Start with black */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.2s ease;
+}
+
+.nav .links ul li a:hover {
+  background-position: 0% 0;
+  /* Slide the gold color into view */
+}
+
+.container {
+  padding: 20px 80px;
+  border: none;
+  overflow: hidden;
+}
+
+.hero {
+  height: 100vh;
+  /* Full viewport height */
+  width: 100vw;
+  /* Full viewport width */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures the video covers the area without distortion */
+  z-index: -1;
+  /* Pushes the video behind content */
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  /* Ensures content appears above the video */
+  text-align: center;
+  color: var(--white);
+  /* Adjust color to suit your design */
+}
+
+.heroButton {
+  color: var(--white);
+}
+
+.heroContent h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.heroContent p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.scrollText {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.scrollText svg {
+  margin-top: 30px;
+}
+
+.home01 {
+  text-align: center;
+}
+
+hr {
+  height: 4px;
+  border: none;
+  width: 70%;
+  margin: auto;
+  background: rgb(243, 243, 243);
+  background: -moz-linear-gradient(90deg, rgba(243, 243, 243, 1) 0%, rgba(239, 203, 3, 1) 50%, rgba(243, 243, 243, 1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(243, 243, 243, 1) 0%, rgba(239, 203, 3, 1) 50%, rgba(243, 243, 243, 1) 100%);
+  background: linear-gradient(90deg, rgba(243, 243, 243, 1) 0%, rgba(239, 203, 3, 1) 50%, rgba(243, 243, 243, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f3f3f3", endColorstr="#f3f3f3", GradientType=1);
+}
+
+footer{
+  padding: 20px 60px;
+}
+
+.footer-container{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 20px 0;
+}
+
+.footer-left{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items:first baseline;
+}
+
+.social svg{
+  margin: 0 10px;
+}
+
+footer h4{
+  color: var(--darkGray);
+  margin: 0;
+  font-weight: 300;
+}
+
+.social p{
+  color: var(--darkGray);
+}
+
+.footer-right{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+footer button{
+  margin: 10px 0;
+}
+
+input {
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid var(--gold);
+  padding: 4px 10px ;
+  font-size: 16px;
+  border-radius: 50px;
+  transition: all ease 0.4s;
+}
+
+input:focus{
+  outline: none;
+  scale: 1.1;
+}
+
+footer input[type=submit]{
+  width: fit-content;
+  margin: auto;
+  display: block;
+  grid: inherit;
+}
