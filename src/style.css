@@ -24,16 +24,12 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--white);
-  box-shadow: 0px 0px 20px -2px inset var(--lightGray);
+  box-shadow: 0px 0px 20px -2px inset var(--darkGray);
 }
 
 .nav {
-  background: var(--lightGray);
-  background: -moz-linear-gradient(180deg, var(--lightGray) 0%, rgba(243, 243, 243, 1) 100%);
-  background: -webkit-linear-gradient(180deg, rgba(226, 226, 226, 1) 0%, rgba(243, 243, 243, 1) 100%);
-  background: linear-gradient(180deg, rgba(226, 226, 226, 1) 0%, rgba(243, 243, 243, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2e2e2", endColorstr="#f3f3f3", GradientType=1);
-  padding: 20px 80px;
+  background: #c0c0c0af;
+  padding: 10px 80px;
   display: grid;
   grid-template-columns: 80% 20%;
   align-items: center;
@@ -43,6 +39,33 @@ body {
   width: 100%;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   z-index: 1000;
+  backdrop-filter: blur(6px);
+  transition: all 0.4s ease-in-out;
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.nav:hover {
+  backdrop-filter: blur(1);
+  background-color: var(--lightGray);
+  -webkit-backdrop-filter: blur(1);
+  padding: 20px 80px;
+}
+
+.nav:hover .logo {
+  width: 120px;
+}
+
+.nav:hover li {
+  font-size: 22px !important;
+}
+
+.nav button {
+  transition: all 0.4s ease-in-out;
+  scale: 0.8;
+}
+
+.nav:hover button {
+  scale: 1;
 }
 
 .nav.hidden {
@@ -57,9 +80,9 @@ body {
   opacity: 1;
 }
 
-
 .logo {
-  width: 120px;
+  width: 80px;
+  transition: all 0.4s ease-in-out;
 }
 
 .nav .links {
@@ -78,11 +101,13 @@ body {
 .nav li {
   display: inline-block;
   margin-right: 40px;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 400;
+  transition: all 0.4s ease-in-out;
 }
 
-button, input[type=submit] {
+button,
+input[type=submit] {
   background-color: transparent;
   border: 2px solid var(--gold);
   border-radius: 50px;
@@ -93,7 +118,8 @@ button, input[type=submit] {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-button:hover, input[type=submit]:hover {
+button:hover,
+input[type=submit]:hover {
   background-color: var(--gold);
   color: var(--black);
   /* Base color */
@@ -158,6 +184,11 @@ a {
   /* Ensures the video covers the area without distortion */
   z-index: -1;
   /* Pushes the video behind content */
+  filter: grayscale(1);
+}
+
+img {
+  filter: grayscale(1);
 }
 
 .heroContent {
@@ -198,6 +229,7 @@ a {
 
 .home01 {
   text-align: center;
+  margin: 60px auto;
 }
 
 hr {
@@ -212,42 +244,42 @@ hr {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f3f3f3", endColorstr="#f3f3f3", GradientType=1);
 }
 
-footer{
+footer {
   padding: 20px 60px;
 }
 
-.footer-container{
+.footer-container {
   display: grid;
   grid-template-columns: 50% 50%;
   padding: 20px 0;
 }
 
-.footer-left{
+.footer-left {
   display: grid;
   grid-template-columns: 50% 50%;
-  align-items:first baseline;
+  align-items: first baseline;
 }
 
-.social svg{
+.social svg {
   margin: 0 10px;
 }
 
-footer h4{
+footer h4 {
   color: var(--darkGray);
   margin: 0;
   font-weight: 300;
 }
 
-.social p{
+.social p {
   color: var(--darkGray);
 }
 
-.footer-right{
+.footer-right {
   display: grid;
   grid-template-columns: auto auto auto;
 }
 
-footer button{
+footer button {
   margin: 10px 0;
 }
 
@@ -255,20 +287,269 @@ input {
   width: 100%;
   margin: 10px 0;
   border: 1px solid var(--gold);
-  padding: 4px 10px ;
+  padding: 4px 10px;
   font-size: 16px;
   border-radius: 50px;
   transition: all ease 0.4s;
 }
 
-input:focus{
+input:focus {
   outline: none;
   scale: 1.1;
 }
 
-footer input[type=submit]{
+footer input[type=submit] {
   width: fit-content;
   margin: auto;
   display: block;
   grid: inherit;
+}
+
+.featuresContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 80px;
+  padding: 80px 0;
+}
+
+.featuresImageContainer img {
+  width: 600px;
+  height: 400px;
+  border-radius: 10px;
+  transition: all ease 0.2s;
+  animation-name: fadeIn;
+  animation-delay: 0s;
+  animation-duration: 300ms;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+
+
+
+.featuresDevider {
+  background-color: var(--gold);
+  width: 2px;
+  align-self: stretch;
+  border-radius: 8px 0px;
+}
+
+.features24-tab-horizontal1,
+.features24-tab-horizontal2,
+.features24-tab-horizontal3 {
+  gap: 40px;
+}
+
+.cta26-accent2-bg {
+  display: flex;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(1deg) skew(0deg, 0deg);
+  align-self: stretch;
+  transition: 0.3s;
+  align-items: center;
+  border-radius: 20px;
+  justify-content: space-between;
+  transform-style: preserve-3d;
+  background-color: var(--gold);
+  width: 70%;
+  margin: 20px auto;
+  margin-bottom: 80px;
+}
+
+.cta26-accent2-bg:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.cta26-accent1-bg {
+  width: 99%;
+  margin: auto;
+  display: flex;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-2deg) skew(0deg, 0deg);
+  align-items: center;
+  border-radius: 20px;
+  justify-content: space-between;
+  transform-style: preserve-3d;
+  background-color: var(--silver);
+}
+
+.cta26-container2 {
+  gap: 20px;
+  width: 100%;
+  display: flex;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(1deg) skew(0deg, 0deg);
+  transition: 0.3s;
+  align-items: center;
+  border-radius: 20px;
+  padding: 40px 80px;
+  background-color: #ececec;
+}
+
+.cta26-container2:hover {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.cta26-container2:hover button,
+.cta26-container2:hover p {
+  color: var(--white);
+}
+
+.cta26-content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.cta26-actions {
+  gap: 20px;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+
+.cta26-content p {
+  display: inline-block;
+  color: var(--darkGray);
+  font-size: 16px;
+}
+
+.cta26-text6 {
+  display: inline-block;
+}
+
+@media(max-width: 767px) {
+  .cta26-container2 {
+    gap: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+@media(max-width: 479px) {
+  .cta26-actions {
+    flex-wrap: wrap;
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .cta26-button {
+    flex: 1;
+  }
+}
+
+.counter-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 100px 0;
+}
+
+.counter-item {
+  text-align: center;
+}
+
+.counter-item h3 {
+  font-size: 3rem;
+  color: #333;
+  margin: 0;
+}
+
+.counter-item p {
+  font-size: 1.2rem;
+  color: #777;
+}
+
+.stackingCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  position: relative;
+  padding: 50px 20px;
+  /* Add padding to give some spacing */
+}
+
+.cardsContentHeader {
+  width: 100%;
+  text-align: center;
+  background: #f9f9f9;
+  /* Background color for visibility */
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  /* Ensure it stays above the cards */
+}
+
+.stacking-cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 20px;
+}
+
+.card {
+  width: 350px;
+  height: 200px;
+  margin: 50px 0;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  transform-origin: center center;
+  /* For scaling effects */
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  /* Smooth transitions */
+}
+
+.testimonialsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.testimonial {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 20px;
+  transition: 0.2s ease;
+}
+
+.testimonial02 {
+  background-color: var(--silver);
+  border-radius: 20px;
+  transition: 0.2s ease;
+}
+
+.testimonial02:hover {
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-2deg) skew(0deg, 0deg);
+}
+.testimonial:hover {
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(4deg) skew(0deg, 0deg);
+  scale: 1.03;
+  background-color: var(--lightGray);
+}
+
+.testimonialHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.testimonialHeader h3 {
+  margin: 0;
+}
+
+.testimonialHeader img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
